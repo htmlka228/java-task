@@ -1,11 +1,15 @@
 package com.example.demotechnologies.service.Impl;
 
+import com.example.demotechnologies.entity.User;
 import com.example.demotechnologies.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,6 +22,8 @@ class UserServiceImplTest {
 
     @Test
     void getUsers() {
-        assertNotNull(userService.getUsers(), "User getting test");
+        List<User> testUsers = userService.getUsers();
+        assertNotNull(testUsers, "User getting test");
+        assertEquals(testUsers, testUsers.stream().sorted().collect(Collectors.toList()));
     }
 }

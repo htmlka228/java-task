@@ -1,14 +1,21 @@
-2021-04-20 21:10:33,416 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Starting DemoTechnologiesApplication using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 22124 (C:\Users\druzh\Desktop\java task\demo-technologies\target\classes started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
-2021-04-20 21:10:33,417 DEBUG com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Running with Spring Boot v2.4.4, Spring v5.3.5
-2021-04-20 21:10:33,418 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] No active profile set, falling back to default profiles: default
-2021-04-20 21:10:37,653 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Started DemoTechnologiesApplication in 4.475 seconds (JVM running for 4.986)
-2021-04-20 21:11:52,483 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Starting DemoTechnologiesApplication using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 10564 (C:\Users\druzh\Desktop\java task\demo-technologies\target\classes started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
-2021-04-20 21:11:52,484 DEBUG com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Running with Spring Boot v2.4.4, Spring v5.3.5
-2021-04-20 21:11:52,484 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] No active profile set, falling back to default profiles: default
-2021-04-20 21:11:56,628 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Started DemoTechnologiesApplication in 4.377 seconds (JVM running for 4.877)
-2021-04-20 21:12:12,266 INFO com.example.demotechnologies.controller.MainController [http-nio-8080-exec-1] Return Sorted admins by email
-2021-04-20 21:12:12,266 DEBUG com.example.demotechnologies.service.Impl.AdminServiceImpl [http-nio-8080-exec-1] Find and getting admins from DB
-2021-04-20 21:16:59,559 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Starting DemoTechnologiesApplication using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 20948 (C:\Users\druzh\Desktop\java task\demo-technologies\target\classes started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
-2021-04-20 21:16:59,560 DEBUG com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Running with Spring Boot v2.4.4, Spring v5.3.5
-2021-04-20 21:16:59,561 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] No active profile set, falling back to default profiles: default
-2021-04-20 21:17:03,739 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Started DemoTechnologiesApplication in 4.438 seconds (JVM running for 4.949)
+2021-04-21 20:31:43,242 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Starting DemoTechnologiesApplication using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 18536 (C:\Users\druzh\Desktop\java task\demo-technologies\target\classes started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
+2021-04-21 20:31:43,251 DEBUG com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-04-21 20:31:43,251 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-04-21 20:31:50,276 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Started DemoTechnologiesApplication in 7.454 seconds (JVM running for 8.551)
+2021-04-21 20:32:06,172 INFO com.example.demotechnologies.controller.MainController [http-nio-8080-exec-2] Return Sorted admins by email
+2021-04-21 20:32:06,172 DEBUG com.example.demotechnologies.service.Impl.AdminServiceImpl [http-nio-8080-exec-2] Find and getting admins from DB
+2021-04-21 20:32:18,781 INFO com.example.demotechnologies.controller.MainController [http-nio-8080-exec-4] Return Sorted admins by email
+2021-04-21 20:32:18,781 DEBUG com.example.demotechnologies.service.Impl.AdminServiceImpl [http-nio-8080-exec-4] Find and getting admins from DB
+2021-04-21 20:35:58,569 INFO com.example.demotechnologies.controller.MainController [http-nio-8080-exec-9] Return Sorted admins by email
+2021-04-21 20:35:58,569 DEBUG com.example.demotechnologies.service.Impl.AdminServiceImpl [http-nio-8080-exec-9] Find and getting admins from DB
+2021-04-21 21:32:44,903 INFO com.example.demotechnologies.service.Impl.AdminServiceImplTest [main] Starting AdminServiceImplTest using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 15568 (started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
+2021-04-21 21:32:44,904 DEBUG com.example.demotechnologies.service.Impl.AdminServiceImplTest [main] Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-04-21 21:32:44,905 INFO com.example.demotechnologies.service.Impl.AdminServiceImplTest [main] No active profile set, falling back to default profiles: default
+2021-04-21 21:32:50,369 INFO com.example.demotechnologies.service.Impl.AdminServiceImplTest [main] Started AdminServiceImplTest in 5.72 seconds (JVM running for 6.604)
+2021-04-21 21:32:50,561 DEBUG com.example.demotechnologies.service.Impl.AdminServiceImpl [main] Find and getting admins from DB
+2021-04-21 21:33:58,967 INFO com.example.demotechnologies.service.Impl.UserServiceImplTest [main] Starting UserServiceImplTest using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 12184 (started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
+2021-04-21 21:33:58,969 DEBUG com.example.demotechnologies.service.Impl.UserServiceImplTest [main] Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-04-21 21:33:58,970 INFO com.example.demotechnologies.service.Impl.UserServiceImplTest [main] No active profile set, falling back to default profiles: default
+2021-04-21 21:34:04,310 INFO com.example.demotechnologies.service.Impl.UserServiceImplTest [main] Started UserServiceImplTest in 5.598 seconds (JVM running for 6.368)
+2021-04-21 21:34:04,459 INFO com.example.demotechnologies.service.Impl.UserServiceImpl [main] Find and getting users from DB
+2021-04-21 21:34:04,567 INFO com.example.demotechnologies.service.Impl.UserServiceImpl [main] Sorting users by email
