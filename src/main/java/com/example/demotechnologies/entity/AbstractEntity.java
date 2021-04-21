@@ -1,10 +1,14 @@
 package com.example.demotechnologies.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @MappedSuperclass
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class AbstractEntity implements Comparable<AbstractEntity>{
     @Id

@@ -11,9 +11,15 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Table(name = "admins")
 public class Admin extends AbstractEntity{
     private LocalDateTime lastLoginDate;
     private boolean active;
+
+    @Builder
+    public Admin(Long id, String email, String password, LocalDateTime lastLoginDate, boolean active) {
+        super(id, email, password);
+        this.lastLoginDate = lastLoginDate;
+        this.active = active;
+    }
 }

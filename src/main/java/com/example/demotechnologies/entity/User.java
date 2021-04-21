@@ -10,8 +10,13 @@ import javax.persistence.Table;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Table(name = "users")
 public class User extends AbstractEntity{
     private boolean active;
+
+    @Builder
+    public User(Long id, String email, String password, boolean active) {
+        super(id, email, password);
+        this.active = active;
+    }
 }
