@@ -7,7 +7,7 @@
 2021-04-20 21:11:52,484 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] No active profile set, falling back to default profiles: default
 2021-04-20 21:11:56,628 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Started DemoTechnologiesApplication in 4.377 seconds (JVM running for 4.877)
 2021-04-20 21:12:12,266 INFO com.example.demotechnologies.controller.MainController [http-nio-8080-exec-1] Return Sorted admins by email
-2021-04-20 21:12:12,266 DEBUG com.example.demotechnologies.service.Impl.AdminServiceImpl [http-nio-8080-exec-1] Find and getting admins from DB
+2021-04-20 21:12:12,266 DEBUG com.example.demotechnologies.service.impl.AdminServiceImpl [http-nio-8080-exec-1] Find and getting admins from DB
 2021-04-20 21:16:59,559 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Starting DemoTechnologiesApplication using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 20948 (C:\Users\druzh\Desktop\java task\demo-technologies\target\classes started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
 2021-04-20 21:16:59,560 DEBUG com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Running with Spring Boot v2.4.4, Spring v5.3.5
 2021-04-20 21:16:59,561 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] No active profile set, falling back to default profiles: default
@@ -17,12 +17,12 @@
 2021-04-20 22:18:11,120 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] No active profile set, falling back to default profiles: default
 2021-04-20 22:18:15,713 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Started DemoTechnologiesApplication in 4.97 seconds (JVM running for 5.517)
 2021-04-20 22:18:27,665 INFO com.example.demotechnologies.controller.MainController [http-nio-8080-exec-1] Return Sorted admins by email
-2021-04-20 22:18:27,665 DEBUG com.example.demotechnologies.service.Impl.AdminServiceImpl [http-nio-8080-exec-1] Find and getting admins from DB
+2021-04-20 22:18:27,665 DEBUG com.example.demotechnologies.service.impl.AdminServiceImpl [http-nio-8080-exec-1] Find and getting admins from DB
 2021-04-20 22:18:51,797 INFO com.example.demotechnologies.controller.MainController [http-nio-8080-exec-4] Return Sorted admins by email
-2021-04-20 22:18:51,797 DEBUG com.example.demotechnologies.service.Impl.AdminServiceImpl [http-nio-8080-exec-4] Find and getting admins from DB
+2021-04-20 22:18:51,797 DEBUG com.example.demotechnologies.service.impl.AdminServiceImpl [http-nio-8080-exec-4] Find and getting admins from DB
 2021-04-20 22:19:20,383 INFO com.example.demotechnologies.controller.MainController [http-nio-8080-exec-5] Return Sorted admins by email
-2021-04-20 22:19:20,383 DEBUG com.example.demotechnologies.service.Impl.AdminServiceImpl [http-nio-8080-exec-5] Find and getting admins from DB
-2021-04-20 22:19:22,389 ERROR com.example.demotechnologies.service.Impl.AdminServiceImpl [http-nio-8080-exec-5] DB connection is failed, data loaded from cache
+2021-04-20 22:19:20,383 DEBUG com.example.demotechnologies.service.impl.AdminServiceImpl [http-nio-8080-exec-5] Find and getting admins from DB
+2021-04-20 22:19:22,389 ERROR com.example.demotechnologies.service.impl.AdminServiceImpl [http-nio-8080-exec-5] DB connection is failed, data loaded from cache
 2021-04-20 22:20:44,702 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Starting DemoTechnologiesApplication using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 18160 (C:\Users\druzh\Desktop\java task\demo-technologies\target\classes started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
 2021-04-20 22:20:44,703 DEBUG com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] Running with Spring Boot v2.4.4, Spring v5.3.5
 2021-04-20 22:20:44,703 INFO com.example.demotechnologies.DemoTechnologiesApplication [restartedMain] No active profile set, falling back to default profiles: default

@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @EqualsAndHashCode(callSuper = true)
@@ -13,7 +14,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Table(name = "admins")
 public class Admin extends AbstractEntity{
+    @NotNull
     private LocalDateTime lastLoginDate;
+
+    @NotNull
     private boolean active;
 
     @Builder

@@ -1,6 +1,7 @@
-package com.example.demotechnologies.service.Impl;
+package com.example.demotechnologies.service.impl;
 
-import com.example.demotechnologies.caxhe.AdminCache;
+import com.example.demotechnologies.caxhe.Cache;
+import com.example.demotechnologies.entity.AbstractEntity;
 import com.example.demotechnologies.entity.Admin;
 import com.example.demotechnologies.exception.AdminNotFoundException;
 import com.example.demotechnologies.repository.AdminRepository;
@@ -9,12 +10,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Collections;
-
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -23,36 +21,36 @@ import java.util.List;
 public class AdminServiceImpl implements AdminService {
 
     private final AdminRepository adminRepository;
-    private final AdminCache adminCache;
+    private final Cache<Admin> adminCache;
 
     @Override
     public List<Admin> getAdmins() {
-        log.debug("Find and getting admins from DB");
+        log.info("Find and getting admins from DB");
 
         try {
-            Connection con= DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/javatest","postgres","pass");
-        } catch (SQLException throwables) {
-            log.error("DB connection is failed, data loaded from cache");
-            return adminCache.getAdmins();
+            List<Admin> admins = adminRepository.findAll();
+            log.info("Sorting admins by email");
+            adminCache.setCache(admins);
+
+            return admins.stream().sorted(Comparator.comparing(AbstractEntity::getEmail)).collect(Collectors.toList());
+
+        } catch (Exception e) {
+            log.error(e + " Data loaded from cache");
+
+            return adminCache.getCache();
         }
-
-        List<Admin> admins = adminRepository.findAll();
-        log.trace("Sorting admins by email");
-        adminCache.setAdmins(admins);
-        Collections.sort(admins);
-
-        return admins;
     }
 
     @Override
     public Admin getAdminById(Long id) {
         Admin admin = adminRepository.findAdminById(id).orElse(null);
-        if(admin != null)
-            return admin;
-        else {
+
+        if (admin == null){
+            log.error("Admin not found");
             throw new AdminNotFoundException("Admin not found");
         }
+
+        return admin;
     }
 
     @Override
@@ -63,6 +61,11 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Admin save(Admin admin, Long id) {
         Admin saveAdmin = getAdminById(id);
+        if (saveAdmin == null) {
+            log.error("Admin not found");
+            throw new AdminNotFoundException("Admin not found");
+        }
+
         saveAdmin.setId(id);
         saveAdmin.setEmail(admin.getEmail());
         saveAdmin.setPassword(admin.getPassword());

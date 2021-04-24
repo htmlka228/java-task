@@ -32,52 +32,52 @@ public class MainController {
         return adminService.getAdmins();
     }
 
-    @GetMapping("user/{id}")
+    @GetMapping("/users/{id}")
     public User getUser(@PathVariable Long id){
         return userService.getUserById(id);
     }
 
-    @GetMapping("admin/{id}")
+    @GetMapping("/admins/{id}")
     public Admin getAdmin(@PathVariable Long id){
         return adminService.getAdminById(id);
     }
 
-    @PostMapping("user/add")
+    @PostMapping("/users")
     public User addUser(@RequestBody User user){
         return userService.save(user);
     }
 
-    @PostMapping("admin/add")
+    @PostMapping("/admins")
     public Admin addAdmin(@RequestBody Admin admin){
         return adminService.save(admin);
     }
 
-    @PutMapping("user/change/{id}")
+    @PutMapping("users/{id}")
     public User putUser(@PathVariable Long id, @RequestBody User user){
         return userService.save(user, id);
     }
 
-    @PutMapping("admin/change/{id}")
+    @PutMapping("admins/{id}")
     public Admin putAdmin(@PathVariable Long id, @RequestBody Admin admin){
         return adminService.save(admin, id);
     }
 
-    @PatchMapping("user/change/{id}")
+    @PatchMapping("users/{id}")
     public User patchUser(@PathVariable Long id, @RequestBody User user){
         return userService.save(user, id);
     }
 
-    @PatchMapping("admin/change/{id}")
+    @PatchMapping("admins/{id}")
     public Admin patchAdmin(@PathVariable Long id, @RequestBody Admin admin){
         return adminService.save(admin, id);
     }
 
-    @DeleteMapping("user/delete/{id}")
+    @DeleteMapping("users/{id}")
     public void deleteUser(@PathVariable Long id){
         userService.deleteUserById(id);
     }
 
-    @DeleteMapping("admin/delete/{id}")
+    @DeleteMapping("admins/{id}")
     public void deleteAdmin(@PathVariable Long id){
         adminService.deleteAdminById(id);
     }

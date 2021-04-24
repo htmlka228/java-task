@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -12,6 +13,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Table(name = "users")
 public class User extends AbstractEntity{
+    @NotNull
     private boolean active;
 
     @Builder

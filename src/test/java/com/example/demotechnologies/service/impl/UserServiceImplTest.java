@@ -1,4 +1,4 @@
-package com.example.demotechnologies.service.Impl;
+package com.example.demotechnologies.service.impl;
 
 import com.example.demotechnologies.entity.User;
 import com.example.demotechnologies.service.UserService;
