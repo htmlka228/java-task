@@ -3,6 +3,7 @@ package com.example.demotechnologies.service.impl;
 import com.example.demotechnologies.caxhe.Cache;
 import com.example.demotechnologies.entity.AbstractEntity;
 import com.example.demotechnologies.entity.User;
+import com.example.demotechnologies.exception.AdminNotFoundException;
 import com.example.demotechnologies.exception.UserNotFoundException;
 import com.example.demotechnologies.repository.UserRepository;
 import com.example.demotechnologies.service.UserService;
@@ -41,14 +42,23 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(Long id) {
-        User user = userRepository.findUserById(id).orElse(null);
+        try {
+            User user = userRepository.findUserById(id).orElse(null);
 
-        if (user == null) {
-            log.error("User not found");
-            throw new UserNotFoundException("User not found");
+            if (user == null) {
+                log.error("User not found");
+                throw new UserNotFoundException("User not found");
+            }
+
+            return user;
+        }catch (Exception e){
+            log.error(e + " Data loaded from cache");
+
+            return userCache.getCache().stream()
+                    .filter(el -> el.getId().equals(id))
+                    .findFirst()
+                    .orElseThrow(() -> new UserNotFoundException("User not found"));
         }
-
-        return user;
     }
 
     @Override

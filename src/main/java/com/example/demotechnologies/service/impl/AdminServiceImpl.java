@@ -43,14 +43,26 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Admin getAdminById(Long id) {
-        Admin admin = adminRepository.findAdminById(id).orElse(null);
+        try {
+            Admin admin = adminRepository.findAdminById(id).orElse(null);
 
-        if (admin == null){
-            log.error("Admin not found");
-            throw new AdminNotFoundException("Admin not found");
+            if (admin == null){
+                log.error("Admin not found");
+                throw new AdminNotFoundException("Admin not found");
+            }
+
+            return admin;
+
+        }catch (Exception e){
+            log.error(e + " Data loaded from cache");
+
+            return adminCache.getCache().stream()
+                                        .filter(el -> el.getId().equals(id))
+                                        .findFirst()
+                                        .orElseThrow(() -> new AdminNotFoundException("Admin not found"));
         }
 
-        return admin;
+
     }
 
     @Override
