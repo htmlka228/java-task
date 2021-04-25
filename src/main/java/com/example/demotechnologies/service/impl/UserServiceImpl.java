@@ -1,9 +1,8 @@
 package com.example.demotechnologies.service.impl;
 
-import com.example.demotechnologies.caxhe.Cache;
+import com.example.demotechnologies.cache.Cache;
 import com.example.demotechnologies.entity.AbstractEntity;
 import com.example.demotechnologies.entity.User;
-import com.example.demotechnologies.exception.AdminNotFoundException;
 import com.example.demotechnologies.exception.UserNotFoundException;
 import com.example.demotechnologies.repository.UserRepository;
 import com.example.demotechnologies.service.UserService;
@@ -33,6 +32,7 @@ public class UserServiceImpl implements UserService {
             log.info("Sorting users by email");
 
             return users.stream().sorted(Comparator.comparing(AbstractEntity::getEmail)).collect(Collectors.toList());
+
         } catch (Exception e) {
             log.error("DB connection is failed, data loaded from cache");
             return userCache.getCache();
@@ -51,7 +51,8 @@ public class UserServiceImpl implements UserService {
             }
 
             return user;
-        }catch (Exception e){
+
+        } catch (Exception e) {
             log.error(e + " Data loaded from cache");
 
             return userCache.getCache().stream()

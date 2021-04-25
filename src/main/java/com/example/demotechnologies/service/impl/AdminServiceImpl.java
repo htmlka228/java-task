@@ -1,6 +1,6 @@
 package com.example.demotechnologies.service.impl;
 
-import com.example.demotechnologies.caxhe.Cache;
+import com.example.demotechnologies.cache.Cache;
 import com.example.demotechnologies.entity.AbstractEntity;
 import com.example.demotechnologies.entity.Admin;
 import com.example.demotechnologies.exception.AdminNotFoundException;
@@ -46,14 +46,14 @@ public class AdminServiceImpl implements AdminService {
         try {
             Admin admin = adminRepository.findAdminById(id).orElse(null);
 
-            if (admin == null){
+            if (admin == null) {
                 log.error("Admin not found");
                 throw new AdminNotFoundException("Admin not found");
             }
 
             return admin;
 
-        }catch (Exception e){
+        } catch (Exception e) {
             log.error(e + " Data loaded from cache");
 
             return adminCache.getCache().stream()
@@ -61,8 +61,6 @@ public class AdminServiceImpl implements AdminService {
                                         .findFirst()
                                         .orElseThrow(() -> new AdminNotFoundException("Admin not found"));
         }
-
-
     }
 
     @Override

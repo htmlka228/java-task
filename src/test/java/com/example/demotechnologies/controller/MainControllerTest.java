@@ -1,23 +1,18 @@
 package com.example.demotechnologies.controller;
 
-import com.example.demotechnologies.entity.AbstractEntity;
 import com.example.demotechnologies.entity.Admin;
 import com.example.demotechnologies.entity.User;
 import com.example.demotechnologies.service.AdminService;
 import com.example.demotechnologies.service.UserService;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.stubbing.Answer;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 class MainControllerTest {

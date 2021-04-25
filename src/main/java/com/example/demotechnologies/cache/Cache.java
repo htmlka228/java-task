@@ -1,4 +1,4 @@
-package com.example.demotechnologies.caxhe;
+package com.example.demotechnologies.cache;
 
 import com.example.demotechnologies.entity.AbstractEntity;
 import lombok.Data;
