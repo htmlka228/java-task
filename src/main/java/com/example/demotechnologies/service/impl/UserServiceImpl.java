@@ -9,6 +9,7 @@ import com.example.demotechnologies.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.CannotCreateTransactionException;
 
 import java.util.Comparator;
 import java.util.List;
@@ -33,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
             return users.stream().sorted(Comparator.comparing(AbstractEntity::getEmail)).collect(Collectors.toList());
 
-        } catch (Exception e) {
+        } catch (CannotCreateTransactionException e) {
             log.error("DB connection is failed, data loaded from cache");
             return userCache.getCache();
         }
@@ -52,7 +53,7 @@ public class UserServiceImpl implements UserService {
 
             return user;
 
-        } catch (Exception e) {
+        } catch (CannotCreateTransactionException e) {
             log.error(e + " Data loaded from cache");
 
             return userCache.getCache().stream()

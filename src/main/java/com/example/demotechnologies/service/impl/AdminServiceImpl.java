@@ -9,6 +9,7 @@ import com.example.demotechnologies.service.AdminService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.CannotCreateTransactionException;
 
 import java.util.Comparator;
 import java.util.List;
@@ -34,7 +35,7 @@ public class AdminServiceImpl implements AdminService {
 
             return admins.stream().sorted(Comparator.comparing(AbstractEntity::getEmail)).collect(Collectors.toList());
 
-        } catch (Exception e) {
+        } catch (CannotCreateTransactionException e) {
             log.error(e + " Data loaded from cache");
 
             return adminCache.getCache();
@@ -53,7 +54,7 @@ public class AdminServiceImpl implements AdminService {
 
             return admin;
 
-        } catch (Exception e) {
+        } catch (CannotCreateTransactionException e) {
             log.error(e + " Data loaded from cache");
 
             return adminCache.getCache().stream()
