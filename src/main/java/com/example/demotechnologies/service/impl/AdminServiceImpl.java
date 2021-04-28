@@ -8,11 +8,12 @@ import com.example.demotechnologies.repository.AdminRepository;
 import com.example.demotechnologies.service.AdminService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataAccessResourceFailureException;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.CannotCreateTransactionException;
 
+import java.util.Collection;
 import java.util.Comparator;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,25 +25,18 @@ public class AdminServiceImpl implements AdminService {
     private final Cache<Admin> adminCache;
 
     @Override
-    public List<Admin> getAdmins() {
+    public Collection<Admin> getAdmins() {
         log.info("Find and getting admins from DB");
 
-        try {
-            List<Admin> admins = adminRepository.findAll();
-            log.info("Sorting admins by email");
-            adminCache.setCache(admins);
-
-            return admins.stream().sorted(Comparator.comparing(AbstractEntity::getEmail)).collect(Collectors.toList());
-
-        } catch (CannotCreateTransactionException e) {
-            log.error(e + " Data loaded from cache");
-
-            return adminCache.getCache();
-        }
+        return adminCache.getCache().values().stream().sorted(Comparator.comparing(AbstractEntity::getEmail)).collect(Collectors.toList());
     }
 
     @Override
     public Admin getAdminById(Long id) {
+        if (adminCache.getCache().containsKey(id)) {
+            return adminCache.getCache().get(id);
+        }
+
         try {
             Admin admin = adminRepository.findAdminById(id).orElse(null);
 
@@ -53,13 +47,14 @@ public class AdminServiceImpl implements AdminService {
 
             return admin;
 
-        } catch (CannotCreateTransactionException e) {
+        } catch (DataAccessResourceFailureException e) {
             log.error(e + " Data loaded from cache");
 
-            return adminCache.getCache().stream()
-                                        .filter(el -> el.getId().equals(id))
-                                        .findFirst()
-                                        .orElseThrow(() -> new AdminNotFoundException("Admin not found"));
+            if (!adminCache.getCache().containsKey(id)) {
+                throw new AdminNotFoundException("Admin not found");
+            }
+
+            return adminCache.getCache().get(id);
         }
     }
 
@@ -88,5 +83,15 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public void deleteAdminById(Long id) {
         adminRepository.deleteById(id);
+    }
+
+    @Override
+    @Scheduled(fixedRate = 20000)
+    public void update() {
+        try {
+            adminCache.setCache(adminRepository.findAll().stream().collect(Collectors.toMap(AbstractEntity::getId, admin -> admin)));
+        } catch (Exception e) {
+            log.info("DB is not working");
+        }
     }
 }

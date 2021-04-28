@@ -44,5 +44,7 @@ limitations under the License.
         <module name="RightCurly"/>
         <module name="GenericWhitespace"/>
         <module name="NoWhitespaceBefore"/>
+        <module name="NoWhitespaceAfter"/>
+        <module name="WhitespaceAround"/>
     </module>
 </module>

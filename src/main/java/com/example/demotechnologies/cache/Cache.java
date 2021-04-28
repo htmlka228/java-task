@@ -1,13 +1,10 @@
 package com.example.demotechnologies.cache;
 
 import com.example.demotechnologies.entity.AbstractEntity;
-import lombok.Data;
-import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.Map;
 
-@Component
-@Data
-public class Cache<T extends AbstractEntity> {
-    private List<T> cache;
+public interface Cache<T extends AbstractEntity> {
+    Map<Long, T> getCache();
+    void setCache(Map<Long, T> map);
 }

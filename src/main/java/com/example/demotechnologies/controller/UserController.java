@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Collection;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,34 +25,34 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    public List<User> getUsers(){
+    public Collection<User> getUsers() {
         log.info("Return Sorted users by email");
 
         return userService.getUsers();
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id){
+    public User getUser(@PathVariable Long id) {
         return userService.getUserById(id);
     }
 
     @PostMapping
-    public User addUser(@RequestBody User user){
+    public User addUser(@RequestBody User user) {
         return userService.save(user);
     }
 
     @PutMapping("/{id}")
-    public User putUser(@PathVariable Long id, @RequestBody User user){
+    public User putUser(@PathVariable Long id, @RequestBody User user) {
         return userService.save(user, id);
     }
 
     @PatchMapping("/{id}")
-    public User patchUser(@PathVariable Long id, @RequestBody User user){
+    public User patchUser(@PathVariable Long id, @RequestBody User user) {
         return userService.save(user, id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id){
+    public void deleteUser(@PathVariable Long id) {
         userService.deleteUserById(id);
     }
 }

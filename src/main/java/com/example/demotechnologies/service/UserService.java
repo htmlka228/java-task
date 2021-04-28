@@ -2,12 +2,13 @@ package com.example.demotechnologies.service;
 
 import com.example.demotechnologies.entity.User;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface UserService {
-    List<User> getUsers();
+    Collection<User> getUsers();
     User getUserById(Long id);
     User save(User user);
     User save(User user, Long id);
     void deleteUserById(Long id);
+    void update();
 }

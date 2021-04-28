@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "admins")
-public class Admin extends AbstractEntity{
+public class Admin extends AbstractEntity {
     @NotNull
     private LocalDateTime lastLoginDate;
 
