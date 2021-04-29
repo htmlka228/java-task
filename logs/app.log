@@ -1,0 +1,14 @@
+2021-04-29 10:32:33,171 INFO com.example.demotechnologies.controller.AdminControllerTest [main] Starting AdminControllerTest using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 4012 (started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
+2021-04-29 10:32:33,176 DEBUG com.example.demotechnologies.controller.AdminControllerTest [main] Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-04-29 10:32:33,178 INFO com.example.demotechnologies.controller.AdminControllerTest [main] No active profile set, falling back to default profiles: default
+2021-04-29 10:32:38,820 INFO com.example.demotechnologies.controller.AdminControllerTest [main] Started AdminControllerTest in 5.906 seconds (JVM running for 6.876)
+2021-04-29 10:33:14,533 INFO com.example.demotechnologies.controller.UserControllerTest [main] Starting UserControllerTest using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 21660 (started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
+2021-04-29 10:33:14,535 DEBUG com.example.demotechnologies.controller.UserControllerTest [main] Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-04-29 10:33:14,536 INFO com.example.demotechnologies.controller.UserControllerTest [main] No active profile set, falling back to default profiles: default
+2021-04-29 10:33:19,963 INFO com.example.demotechnologies.controller.UserControllerTest [main] Started UserControllerTest in 5.681 seconds (JVM running for 6.476)
+2021-04-29 10:48:19,243 INFO com.example.demotechnologies.service.impl.AdminServiceImplTest [main] Starting AdminServiceImplTest using Java 15.0.1 on DESKTOP-DKR4OU9 with PID 15020 (started by druzh in C:\Users\druzh\Desktop\java task\demo-technologies)
+2021-04-29 10:48:19,245 DEBUG com.example.demotechnologies.service.impl.AdminServiceImplTest [main] Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-04-29 10:48:19,246 INFO com.example.demotechnologies.service.impl.AdminServiceImplTest [main] No active profile set, falling back to default profiles: default
+2021-04-29 10:48:24,711 INFO com.example.demotechnologies.service.impl.AdminServiceImplTest [main] Started AdminServiceImplTest in 5.748 seconds (JVM running for 6.57)
+2021-04-29 10:48:24,949 INFO com.example.demotechnologies.service.impl.AdminServiceImpl [main] Find and getting admins from DB
+2021-04-29 10:48:24,952 INFO com.example.demotechnologies.service.impl.AdminServiceImpl [main] Find and getting admins from DB
